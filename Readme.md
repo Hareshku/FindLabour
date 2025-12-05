@@ -1,0 +1,1 @@
+FindLabour is a web-based platform that connects customers with skilled labourers. Users can post jobs, explore worker profiles, chat, and rate them based on their performance. Labourers can browse work opportunities, filter by category, send proposal for work and can rate the customer/client based on their behavior throughout the work duration.
