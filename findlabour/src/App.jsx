@@ -1,16 +1,12 @@
-import { useState } from 'react'
-import React from 'react'
-import './index.css'
-
+import { AuthProvider } from './context/AuthContext.jsx';
+import AppRoutes from './router/AppRoutes';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className='bg-red-500'>
-      App
-    </div>
-  )
+    <AuthProvider>
+      <AppRoutes />
+    </AuthProvider>
+  );
 }
 
-export default App
+export default App;
