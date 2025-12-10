@@ -1,19 +1,6 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { SearchInput } from '../../components/Inputs';
+import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
-  const [activeTab, setActiveTab] = useState('talent');
-  const navigate = useNavigate();
-
-  const handleSearch = (query) => {
-    if (activeTab === 'talent') {
-      navigate(`/hire-worker?search=${query}`);
-    } else {
-      navigate(`/find-work?search=${query}`);
-    }
-  };
-
   return (
     <section className="relative min-h-[600px] bg-gray-100 overflow-hidden">
       {/* Background Image */}
@@ -30,45 +17,28 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="max-w-2xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-white leading-tight mb-8">
-            Connecting customers to skilled workers who deliver
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-light text-white leading-relaxed mb-8">
+            Whether you are searching for dependable labour or seeking work to support your family, FindLabour connects people to possibilities, with fairness and dignity
           </h1>
 
-          {/* Search Card */}
-          <div className="bg-white rounded-xl p-6 shadow-lg">
-            {/* Tabs */}
-            <div className="flex gap-2 mb-4">
-              <button
-                onClick={() => setActiveTab('talent')}
-                className={`px-6 py-2.5 rounded-full text-sm font-medium transition-colors ${activeTab === 'talent'
-                  ? 'bg-gray-900 text-white'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                  }`}
-              >
-                Find workers
-              </button>
-              <button
-                onClick={() => setActiveTab('jobs')}
-                className={`px-6 py-2.5 rounded-full text-sm font-medium transition-colors ${activeTab === 'jobs'
-                  ? 'bg-gray-900 text-white'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                  }`}
-              >
-                Browse work
-              </button>
-            </div>
-
-            {/* Search Input */}
-            <SearchInput
-              placeholder={activeTab === 'talent'
-                ? "Search by skill, location, or work type"
-                : "Search for work opportunities"}
-              onSearch={handleSearch}
-            />
+          {/* CTA Buttons */}
+          <div className="flex flex-wrap gap-4 mb-12">
+            <Link
+              to="/hire-worker"
+              className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-full font-medium transition-colors"
+            >
+              Hire Workers
+            </Link>
+            <Link
+              to="/find-work"
+              className="bg-white hover:bg-gray-100 text-gray-900 px-8 py-3 rounded-full font-medium transition-colors"
+            >
+              Find Work
+            </Link>
           </div>
 
           {/* Stats Section */}
-          <div className="mt-8 flex items-center gap-8 flex-wrap">
+          <div className="flex items-center gap-8 flex-wrap">
             <div className="text-white">
               <p className="text-3xl font-bold">10K+</p>
               <p className="text-white/70 text-sm">Skilled Workers</p>

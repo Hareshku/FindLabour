@@ -5,6 +5,8 @@ import Login from '../pages/Login';
 import Register from '../pages/Register';
 import JobDetails from '../pages/JobDetails';
 import UserProfile from '../pages/UserProfile';
+import HireWorker from '../pages/HireWorker';
+import FindWork from '../pages/FindWork';
 
 const AppRoutes = () => {
   return (
@@ -15,8 +17,10 @@ const AppRoutes = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/job/:id" element={<MainLayout><JobDetails /></MainLayout>} />
         <Route path="/profile/:id" element={<MainLayout><UserProfile /></MainLayout>} />
-        <Route path="/hire-worker" element={<MainLayout><Home /></MainLayout>} />
-        <Route path="/find-work" element={<MainLayout><Home /></MainLayout>} />
+        <Route path="/hire-worker" element={<MainLayout><HireWorker /></MainLayout>} />
+        <Route path="/find-work" element={<MainLayout><FindWork /></MainLayout>} />
+        <Route path="/worker/:id" element={<MainLayout><UserProfile /></MainLayout>} />
+        <Route path="/work/:id" element={<MainLayout><JobDetails /></MainLayout>} />
         <Route path="/services" element={<MainLayout><Home /></MainLayout>} />
         <Route path="/why-findlabour" element={<MainLayout><Home /></MainLayout>} />
       </Routes>
