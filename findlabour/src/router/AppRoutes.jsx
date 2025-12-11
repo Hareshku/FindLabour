@@ -3,24 +3,43 @@ import MainLayout from '../layouts/MainLayout';
 import Home from '../pages/Home';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
-import JobDetails from '../pages/JobDetails';
 import UserProfile from '../pages/UserProfile';
 import HireWorker from '../pages/HireWorker';
 import FindWork from '../pages/FindWork';
+import WorkDetails from '../pages/WorkDetails';
+import PostWork from '../pages/PostWork';
+import Messages from '../pages/Messages';
+import MyPosts from '../pages/MyPosts';
+import MyApplications from '../pages/MyApplications';
 
 const AppRoutes = () => {
   return (
     <BrowserRouter>
       <Routes>
+        {/* Public Routes */}
         <Route path="/" element={<MainLayout><Home /></MainLayout>} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/job/:id" element={<MainLayout><JobDetails /></MainLayout>} />
-        <Route path="/profile/:id" element={<MainLayout><UserProfile /></MainLayout>} />
+
+        {/* Worker & Work Routes */}
         <Route path="/hire-worker" element={<MainLayout><HireWorker /></MainLayout>} />
         <Route path="/find-work" element={<MainLayout><FindWork /></MainLayout>} />
         <Route path="/worker/:id" element={<MainLayout><UserProfile /></MainLayout>} />
-        <Route path="/work/:id" element={<MainLayout><JobDetails /></MainLayout>} />
+        <Route path="/work/:id" element={<MainLayout><WorkDetails /></MainLayout>} />
+
+        {/* User Routes */}
+        <Route path="/profile" element={<MainLayout><UserProfile /></MainLayout>} />
+        <Route path="/profile/:id" element={<MainLayout><UserProfile /></MainLayout>} />
+        <Route path="/messages" element={<MainLayout><Messages /></MainLayout>} />
+
+        {/* Customer Routes */}
+        <Route path="/post-work" element={<MainLayout><PostWork /></MainLayout>} />
+        <Route path="/my-posts" element={<MainLayout><MyPosts /></MainLayout>} />
+
+        {/* Labor Routes */}
+        <Route path="/my-applications" element={<MainLayout><MyApplications /></MainLayout>} />
+
+        {/* Static Pages */}
         <Route path="/services" element={<MainLayout><Home /></MainLayout>} />
         <Route path="/why-findlabour" element={<MainLayout><Home /></MainLayout>} />
       </Routes>
