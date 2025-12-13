@@ -4,6 +4,7 @@ import Home from '../pages/Home';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
 import UserProfile from '../pages/UserProfile';
+import EditProfile from '../pages/EditProfile';
 import HireWorker from '../pages/HireWorker';
 import FindWork from '../pages/FindWork';
 import WorkDetails from '../pages/WorkDetails';
@@ -11,6 +12,7 @@ import PostWork from '../pages/PostWork';
 import Messages from '../pages/Messages';
 import MyPosts from '../pages/MyPosts';
 import MyApplications from '../pages/MyApplications';
+import WriteReview from '../pages/WriteReview';
 
 const AppRoutes = () => {
   return (
@@ -30,6 +32,7 @@ const AppRoutes = () => {
         {/* User Routes */}
         <Route path="/profile" element={<MainLayout><UserProfile /></MainLayout>} />
         <Route path="/profile/:id" element={<MainLayout><UserProfile /></MainLayout>} />
+        <Route path="/edit-profile" element={<MainLayout><EditProfile /></MainLayout>} />
         <Route path="/messages" element={<MainLayout><Messages /></MainLayout>} />
 
         {/* Customer Routes */}
@@ -38,6 +41,9 @@ const AppRoutes = () => {
 
         {/* Labor Routes */}
         <Route path="/my-applications" element={<MainLayout><MyApplications /></MainLayout>} />
+
+        {/* Review */}
+        <Route path="/review/:id" element={<MainLayout><WriteReview /></MainLayout>} />
 
         {/* Static Pages */}
         <Route path="/services" element={<MainLayout><Home /></MainLayout>} />

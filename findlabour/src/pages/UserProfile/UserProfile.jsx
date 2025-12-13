@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
 
 const UserProfile = () => {
@@ -66,9 +66,9 @@ const UserProfile = () => {
                   </button>
                 )}
                 {isOwnProfile && (
-                  <button className="border border-gray-200 text-gray-700 px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-50">
+                  <Link to="/edit-profile" className="border border-gray-200 text-gray-700 px-6 py-2 rounded-full text-sm font-medium hover:bg-gray-50">
                     Edit Profile
-                  </button>
+                  </Link>
                 )}
               </div>
             </div>
